@@ -8,6 +8,19 @@ for (var i = 9; i < 18; i++) {
     var saveBtn = $("<button>").attr('class', 'col-1 saveBtn');
     saveBtn.text('Save');
 
+    if (i === moment().hour()) {
+        text.attr("class", "present col-10");
+
+    }
+
+    if (i > moment().hour()) {
+        text.attr("class", "future col-10");
+    }
+
+    if (i < moment().hour()) {
+        text.attr("class", "past col-10");
+    }
+
     if (i < 12){
         time.text(i + "AM");
         rows.append(time);
@@ -29,6 +42,7 @@ for (var i = 9; i < 18; i++) {
         rows.append(saveBtn);
         containerEl.append(rows);
     }
+
 }
 
 var today = moment();
