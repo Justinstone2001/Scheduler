@@ -18,6 +18,6 @@ This webpage allows users to see a table containing the work day schedule, with 
 
 
 ## Resources
-[LIVE SITE](https://justinstone2001.github.io/Code-Quiz/)
+[LIVE SITE](https://justinstone2001.github.io/Scheduler/)
 
-[Repository](https://github.com/Justinstone2001/Code-Quiz)
+[Repository](https://github.com/Justinstone2001/Scheduler)
