@@ -1,3 +1,6 @@
+var today = moment();
+$("#currentDay").text(today.format("dddd, MMMM Do"));
+
 var containerEl = $(".container");
 var input = $("#input");
 
@@ -44,8 +47,4 @@ for (var i = 9; i < 18; i++) {
     }
 
 }
-
-var today = moment();
-$("#currentDay").text(today.format("dddd, MMMM Do"));
-
 
