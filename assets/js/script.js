@@ -28,14 +28,14 @@ for (var i = 9; i < 18; i++) {
     }
 
     // Set the rows up with each time, a space to enter text and a save button
-    if (i < 12){
+    if (i < 12) {
         time.text(i + "AM");
         rows.append(time);
         rows.append(text);
         rows.append(saveBtn);
         containerEl.append(rows);
     }
-    if (i === 12){
+    if (i === 12) {
         time.text(i + "PM");
         rows.append(time);
         rows.append(text);
@@ -49,6 +49,18 @@ for (var i = 9; i < 18; i++) {
         rows.append(saveBtn);
         containerEl.append(rows);
     }
-
+    // Sets up local storage in the text box
+    if (localStorage.getItem('reminders')) {
+        text.val(JSON.parse(localStorage.getItem('reminders'))[time.text()]);
+    }
 }
+// Sets up local storage to save on the click event, saves users text to the schedule
+$('button').on('click', function (event) {
+    var local = JSON.parse(localStorage.getItem('reminders')) || {};
+    var target = $(event.target).parent().children();
+    var key = $(target[0]).text();
+    var value = $(target[1]).val();
+    local[key] = value;
+    localStorage.setItem('reminders', JSON.stringify(local));
+});
 
